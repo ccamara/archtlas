@@ -119,25 +119,25 @@ libraries[colorbox][directory_name] = "colorbox"
 libraries[colorbox][type] = "library"
 libraries[colorbox][destination] = "libraries"
 libraries[colorbox][download][type] = "get"
-libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/archive/master.zip" ; TODO add download URI
+libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/archive/master.zip" 
 
 libraries[ckeditor][directory_name] = "ckeditor"
 libraries[ckeditor][type] = "library"
 libraries[ckeditor][destination] = "libraries"
 libraries[ckeditor][download][type] = "get"
-libraries[ckeditor][download][url] = "http://ckeditor.com/downloads/ckeditor_4.0.1_basic.zip" ; TODO add download URI
+libraries[ckeditor][download][url] = "http://ckeditor.com/downloads/ckeditor_4.0.1_basic.zip" 
 
 libraries[leaflet][directory_name] = "leaflet"
 libraries[leaflet][type] = "library"
 libraries[leaflet][destination] = "libraries"
 libraries[leaflet][download][type] = "get"
-libraries[leaflet][download][url] = "https://github.com/Leaflet/Leaflet.git" ; TODO add download URI
+libraries[leaflet][download][url] = "https://github.com/Leaflet/Leaflet.git" 
 
 libraries[leaflet_markercluster][directory_name] = "leaflet_markercluster"
 libraries[leaflet_markercluster][type] = "library"
 libraries[leaflet_markercluster][destination] = "libraries"
 libraries[leaflet_markercluster][download][type] = "get"
-libraries[leaflet_markercluster][download][url] = "https://github.com/Leaflet/Leaflet.markercluster" ; TODO add download URI
+libraries[leaflet_markercluster][download][url] = "https://github.com/Leaflet/Leaflet.markercluster"  URI
 
 
 ; Patches
