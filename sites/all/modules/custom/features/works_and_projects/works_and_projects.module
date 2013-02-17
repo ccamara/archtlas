@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Works and projects feature.
- */
-
-include_once 'works_and_projects.features.inc';

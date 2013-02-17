@@ -125,7 +125,7 @@ libraries[ckeditor][directory_name] = "ckeditor"
 libraries[ckeditor][type] = "library"
 libraries[ckeditor][destination] = "libraries"
 libraries[ckeditor][download][type] = "get"
-libraries[ckeditor][download][url] = "http://ckeditor.com/downloads/ckeditor_4.0.1_basic.zip" 
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor 4.0.1/ckeditor_4.0.1_basic.zip" 
 
 libraries[leaflet][directory_name] = "leaflet"
 libraries[leaflet][type] = "library"
@@ -137,7 +137,7 @@ libraries[leaflet_markercluster][directory_name] = "leaflet_markercluster"
 libraries[leaflet_markercluster][type] = "library"
 libraries[leaflet_markercluster][destination] = "libraries"
 libraries[leaflet_markercluster][download][type] = "get"
-libraries[leaflet_markercluster][download][url] = "https://github.com/Leaflet/Leaflet.markercluster"  URI
+libraries[leaflet_markercluster][download][url] = "https://github.com/Leaflet/Leaflet.markercluster"
 
 
 ; Patches
