@@ -2,7 +2,7 @@
 core = "7.x"
 api = "2"
 ; comment this out in to use on drupal.org
-projects[drupal][version] = "7.x"
+projects[] = drupal
 
 ; Modules
 ;projects[ctools][version] = "1.2"
@@ -83,8 +83,6 @@ projects[transliteration][subdir] = "contrib"
 ;projects[globalredirect][version] = "1.5"
 projects[globalredirect][subdir] = "contrib"
 
-;projects[works_and_projects][version] = "1.0"
-projects[works_and_projects][subdir] = "contrib"
 
 ;projects[taxonomy_manager][version] = "1.0-rc1"
 projects[taxonomy_manager][subdir] = "contrib"
@@ -107,6 +105,9 @@ projects[i18_page_views][subdir] = "contrib"
 ;projects[views][version] = "3.5"
 projects[views][subdir] = "contrib"
 
+; Features
+;projects[works_and_projects][version] = "1.0"
+projects[works_and_projects][subdir] = "features"
 
 ; Themes
 projects[BaseBuildingBlocks][type] = "theme"
@@ -145,3 +146,9 @@ projects[drupal][patch][] = "http://drupal.org/files/compatibility_media_1-15395
 
 projects[contrib][patch][] = "http://drupal.org/files/compatibility_media_1-1539528-1.patch"
 
+; Translations for ArchTLAS install profile
+; uncomment and modify following lines copied from openatrium drush.make file
+;libraries[translations][download][type] = "get"
+;libraries[translations][download][url] = "https://translate.openatrium.com/sites/translate.openatrium.com/files/atrium-installer-beta9.tar.gz"
+;libraries[translations][directory_name] = "translations"
+;libraries[translations][destination] = "."
