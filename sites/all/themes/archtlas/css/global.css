@@ -1,2 +1,12 @@
 /* This file will hold styles for the mobile version of your website (mobile first). */
 /* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. */
+@font-face {
+  font-family: "Junction";
+  src: url(../fonts/Junction 02.otf) format("opentype");  
+}
+
+body {
+  font-family: "Junction",Verdana,Helvetica,Arial,sans-serif;
+  /*color: red;*/
+}
+
