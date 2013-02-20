@@ -7,6 +7,26 @@
 
 body {
   font-family: "Junction",Verdana,Helvetica,Arial,sans-serif;
-  /*color: red;*/
+  background: #fff;
 }
 
+a:link, a:visited {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px dashed #000000;
+}
+
+a:hover {
+  color: #fff;
+  background-color: #000;
+  padding: 6px 3px 3px;
+}
+
+.site-name-slogan a, .logo-img a {
+  border: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Junction",Georgia,'Times New Roman',serif;
+    letter-spacing: -0.05em;
+}
