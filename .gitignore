@@ -4,3 +4,12 @@ sites/*/settings*.php
 # Ignore paths that contain user-generated content.
 sites/*/files
 sites/*/private
+
+#Ignore private working directories
+.kdev4/
+ArchTLAS.kdev4
+.gitignore
+.directory
+
+#Ignore KDE's backup files
+*~
