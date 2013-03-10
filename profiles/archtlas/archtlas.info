@@ -36,14 +36,25 @@ dependencies[] = rdf
 ; Dependencies: custom modules and features
 ; ----------
 
-; Portfolio
-dependencies[] = works_and_projects
-; User interface - It may be considered to substitute these dependencies by a single feature called "user interface improvements" or so
 dependencies[] = addanother
 dependencies[] = dialog
 dependencies[] = wysiwyg
 
+; ----------
+; Features custom modules and features
+; ----------
+;Management
+dependencies[] = feature_contact
+dependencies[] = user_improvements
+
+; Portfolio
+dependencies[] = works_and_projects
+
+; User interface - It may be considered to substitute these dependencies by a single feature called "user interface improvements" or so
+
+
 ; Information added by drupal.org packaging script on 2012-12-19
 project = "drupal"
 datestamp = "1355944003"
+
 
