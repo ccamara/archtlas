@@ -1,0 +1,13 @@
+name = Contact Form
+description = Enables contact form, menu and permissions
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = feature_contact
+dependencies[] = contact
+dependencies[] = features
+dependencies[] = menu
+features[features_api][] = api:1
+features[menu_custom][] = main-menu
+features[menu_links][] = main-menu:contact
+features[user_permission][] = access site-wide contact form
