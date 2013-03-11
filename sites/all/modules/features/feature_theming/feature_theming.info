@@ -1,0 +1,13 @@
+name = Theming
+description = Sets default theme and admin theme
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = feature_theming
+dependencies[] = ctools
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:1
+features[variable][] = admin_theme
+features[variable][] = node_admin_theme
+features[variable][] = theme_default
