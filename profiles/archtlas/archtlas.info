@@ -33,7 +33,7 @@ dependencies[] = file
 dependencies[] = rdf
 dependencies[] = strongarm
 
-dependencies[] = global_redirect
+dependencies[] = globalredirect
 dependencies[] = transliteration
 
 ; ----------
@@ -56,7 +56,7 @@ dependencies[] = works_and_projects
 
 dependencies[] = feature_wysiwyg
 dependencies[] = feature_contact
-dependencies[] = feature_theme
+dependencies[] = feature_theming
 
 ; Information added by drupal.org packaging script on 2012-12-19
 project = "drupal"
