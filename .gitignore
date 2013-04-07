@@ -1,0 +1,14 @@
+# Ignore configuration files that may contain sensitive information.
+sites/*/settings*.php
+
+# Ignore paths that contain user-generated content.
+sites/*/files
+sites/*/private
+
+#Ignore private working directories
+.kdev4/
+*.kdev4
+.directory
+
+#Ignore KDE's backup files
+*~
