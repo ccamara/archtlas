@@ -1,0 +1,27 @@
+diff --git a/media_colorbox.module b/media_colorbox.module
+index 8a5dda5..4acda3a 100644
+--- a/media_colorbox.module
++++ b/media_colorbox.module
+@@ -32,11 +32,21 @@ function media_colorbox_theme() {
+  * Implements hook_menu().
+  */
+ function media_colorbox_menu() {
++  // Get media version
++  $path = drupal_get_path('module', 'media');
++  $info = drupal_parse_info_file($path .'/media.info');
++  $version = $info['version'];
++  if (strpos($version, '7.x-1') !== FALSE) {
++    $access_callback = 'media_access';
++  }
++  else {
++    $access_callback = 'file_entity_access';
++  }
+   $items['media_colorbox/%file/%/%'] = array(
+     'title' => 'Colorbox',
+     'page callback' => 'media_colorbox_callback',
+     'page arguments' => array(1, 2, 3),
+-    'access callback' => 'file_entity_access',
++    'access callback' => $access_callback,
+     'access arguments' => array('view'),
+     'type' => MENU_CALLBACK,
+     'file' => 'media_colorbox.pages.inc',
