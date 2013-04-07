@@ -2,6 +2,7 @@ name = Theming
 description = Sets default theme and admin theme
 core = 7.x
 package = Features
+php = 5.2.4
 version = 7.x-1.0
 project = feature_theming
 dependencies[] = ctools
