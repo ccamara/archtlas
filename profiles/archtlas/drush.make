@@ -142,9 +142,8 @@ libraries[leaflet_markercluster][download][url] = "https://github.com/Leaflet/Le
 
 
 ; Patches
-projects[drupal][patch][] = "http://drupal.org/files/compatibility_media_1-1539528-1.patch"
+projects[media][patch][] = "http://drupal.org/files/compatibility_media_1-1539528-1.patch"
 
-projects[contrib][patch][] = "http://drupal.org/files/compatibility_media_1-1539528-1.patch"
 
 ; Translations for ArchTLAS install profile
 ; uncomment and modify following lines copied from openatrium drush.make file
