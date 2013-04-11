@@ -10,7 +10,7 @@
 
 define('LEAFLET_DEMO_DEFAULT_LAT', 51.4777);
 define('LEAFLET_DEMO_DEFAULT_LNG', -0.0015);
-define('LEAFLET_DEMO_DEFAULT_ZOOM', 14);
+define('LEAFLET_DEMO_DEFAULT_ZOOM', 11);
 
 /**
  * Implements hook_block_info().

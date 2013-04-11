@@ -2,8 +2,10 @@
 INSTALLATION
 ============
 Before you enable the Leaflet More Maps module, you need to download and enable
-the Leaflet and Libraries modules on your system.
+the Leaflet module and the Libraries module.
+
 Then download the Leaflet javascript library from http://leaflet.cloudmade.com/download.html.
+
 This zip file contains a directory named 'dist'. Drop this directory in
 sites/all/libraries/leaflet, so that the path to the essential javascript file
 becomes sites/all/libraries/leaflet/dist/leaflet.js
@@ -12,13 +14,9 @@ If all's ok, you won't see any errors in the Status Report admin/reports/status.
 After this all you have to do is enable Leaflet More Maps to enhance your
 mapping experience with lots of attractive map options.
 
-You select your favorite map when you render a View as a map (e.g. in
-combination with the "IP Geolocation Views and Maps" module) or when Geofields
-(http://drupal.org/project/geofield) are output in a View, as a table or in the
-unformatted format. In the View UI, when prompted, make sure you specify a path
-to the location marker icon, eg sites/all/libraries/leaflet/dist/images/marker-icon.png.
-If you leave it blank, you may find that only the first result of your View
-produces a map and one without a marker at that.
+You select your favorite map when you format a single field (eg Geofield) as a
+map or when you format a View (of multiple nodes or users) as a map. The module
+"IP Geolocation Views and Maps" module is particularly good for this.
 
 The included submodule Leaflet Demo introduces a block that you can enable on a
 page to showcase all maps available, centered on your current location, or any
@@ -52,3 +50,5 @@ o http://maps.stamen.com/#watercolor/12/37.7706/-122.3782
 o http://thunderforest.com
 o http://www.esri.com
 o http://mapquest.com
+o http://www.google.com/intl/en_au/help/terms_maps.html
+o http://legal.yandex.ru/maps_termsofuse
