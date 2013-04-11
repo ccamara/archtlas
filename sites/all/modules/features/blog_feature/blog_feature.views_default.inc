@@ -78,25 +78,6 @@ function blog_feature_views_default_views() {
     'default' => 'default',
     'page' => 'page',
   );
-  $translatables['blog'] = array(
-    t('Master'),
-    t('Blog'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('Page'),
-    t('Feed'),
-  );
   $export['blog'] = $view;
 
   return $export;

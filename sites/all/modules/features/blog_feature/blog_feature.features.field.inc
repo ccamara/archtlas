@@ -13,9 +13,9 @@ function blog_feature_field_default_fields() {
   // Exported field: 'node-article-body'.
   $fields['node-article-body'] = array(
     'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
+      'active' => 1,
+      'cardinality' => 1,
+      'deleted' => 0,
       'entity_types' => array(
         0 => 'node',
       ),
@@ -33,16 +33,16 @@ function blog_feature_field_default_fields() {
           0 => 'format',
         ),
       ),
-      'locked' => '0',
+      'locked' => 0,
       'module' => 'text',
       'settings' => array(),
-      'translatable' => '0',
+      'translatable' => 0,
       'type' => 'text_with_summary',
     ),
     'field_instance' => array(
       'bundle' => 'article',
       'default_value' => NULL,
-      'deleted' => '0',
+      'deleted' => 0,
       'description' => '',
       'display' => array(
         'default' => array(
@@ -86,9 +86,9 @@ function blog_feature_field_default_fields() {
   // Exported field: 'node-article-field_image'.
   $fields['node-article-field_image'] = array(
     'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
+      'active' => 1,
+      'cardinality' => 1,
+      'deleted' => 0,
       'entity_types' => array(),
       'field_name' => 'field_image',
       'foreign keys' => array(
@@ -104,18 +104,18 @@ function blog_feature_field_default_fields() {
           0 => 'fid',
         ),
       ),
-      'locked' => '0',
+      'locked' => 0,
       'module' => 'image',
       'settings' => array(
         'default_image' => FALSE,
         'uri_scheme' => 'public',
       ),
-      'translatable' => '0',
+      'translatable' => 0,
       'type' => 'image',
     ),
     'field_instance' => array(
       'bundle' => 'article',
-      'deleted' => '0',
+      'deleted' => 0,
       'description' => 'Upload an image to go with this article.',
       'display' => array(
         'default' => array(
@@ -169,9 +169,9 @@ function blog_feature_field_default_fields() {
   // Exported field: 'node-article-field_tags'.
   $fields['node-article-field_tags'] = array(
     'field_config' => array(
-      'active' => '1',
-      'cardinality' => '-1',
-      'deleted' => '0',
+      'active' => 1,
+      'cardinality' => -1,
+      'deleted' => 0,
       'entity_types' => array(),
       'field_name' => 'field_tags',
       'foreign keys' => array(
@@ -187,7 +187,7 @@ function blog_feature_field_default_fields() {
           0 => 'tid',
         ),
       ),
-      'locked' => '0',
+      'locked' => 0,
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -198,13 +198,13 @@ function blog_feature_field_default_fields() {
         ),
         'options_list_callback' => 'i18n_taxonomy_allowed_values',
       ),
-      'translatable' => '0',
+      'translatable' => 0,
       'type' => 'taxonomy_term_reference',
     ),
     'field_instance' => array(
       'bundle' => 'article',
       'default_value' => NULL,
-      'deleted' => '0',
+      'deleted' => 0,
       'description' => 'Enter a comma-separated list of words to describe your content.',
       'display' => array(
         'default' => array(
