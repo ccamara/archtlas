@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * feature_theming.strongarm.inc
+ * theming_feature.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function feature_theming_strongarm() {
+function theming_feature_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
