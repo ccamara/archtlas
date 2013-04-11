@@ -51,9 +51,9 @@ dependencies[] = works_and_projects
 
 ; User interface - It may be considered to substitute these dependencies by a single feature called "user interface improvements" or so
 
-dependencies[] = feature_wysiwyg
-dependencies[] = feature_contact
-dependencies[] = feature_theming
+dependencies[] = wysiwyg_feature
+dependencies[] = contact_feature
+dependencies[] = theming_feature
 
 ; ----------
 ; Themes
