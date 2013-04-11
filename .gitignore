@@ -6,7 +6,7 @@ sites/*/files
 sites/*/private
 
 #Ignore development modules
-sites/all/modules/development
+#sites/all/modules/development
 
 #Ignore private working directories
 .kdev4/
