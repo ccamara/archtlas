@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * feature_contact.features.user_permission.inc
+ * contact_feature.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function feature_contact_user_default_permissions() {
+function contact_feature_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: access site-wide contact form.

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * feature_contact.features.menu_custom.inc
+ * contact_feature.features.menu_custom.inc
  */
 
 /**
  * Implements hook_menu_default_menu_custom().
  */
-function feature_contact_menu_default_menu_custom() {
+function contact_feature_menu_default_menu_custom() {
   $menus = array();
 
   // Exported menu: main-menu.
