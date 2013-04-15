@@ -13,3 +13,16 @@ function archtlas_form_install_configure_form_alter(&$form, $form_state) {
   // Pre-populate the site name with the server name.
   $form['site_information']['site_name']['#default_value'] = $_SERVER['SERVER_NAME'];
 }
+
+/**
+ * Implements hook_install_tasks_alter().
+ */
+function archtlas_install_tasks_alter(&$tasks, $install_state) {
+  // set a custom theme for the installation
+  global $theme_key;
+  $theme_key = 'archtlas_install';
+  $install_state['parameters']['profile'] = 'archtlas';
+}
+
+
+
