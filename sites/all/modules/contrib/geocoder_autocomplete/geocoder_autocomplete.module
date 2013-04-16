@@ -8,8 +8,8 @@
  * Stefan Auditor <stefan.auditor@erdfisch.de>
  */
 
-define(GEOCODER_AUTOCOMPLETE_URL, 'http://maps.google.com/maps/api/geocode');
-define(GEOCODER_AUTOCOMPLETE_FORMAT, 'json');
+define('GEOCODER_AUTOCOMPLETE_URL', 'http://maps.google.com/maps/api/geocode');
+define('GEOCODER_AUTOCOMPLETE_FORMAT', 'json');
 
 /**
  * Implements hook_menu().
@@ -49,7 +49,7 @@ function geocoder_autocomplete_field_widget_form(&$form, &$form_state, $field, $
       $widget = $element + array(
         '#type' => 'textfield',
         '#default_value' => isset($items[$delta]['value']) ? $items[$delta]['value'] : NULL,
-        '#size' => $instance['widget']['settings']['size'],
+        '#size' => isset($instance['widget']['settings']['size']) ? $instance['widget']['settings']['size'] : 60,
         '#maxlength' => $field['settings']['max_length'],
         '#attributes' => array('class' => array('text-geocoder')),
         '#autocomplete_path' => 'geocoder/autocomplete',
