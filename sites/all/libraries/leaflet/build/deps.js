@@ -22,7 +22,6 @@ var deps = {
 		desc: 'The core of the library, including OOP, events, DOM facilities, basic units, projections (EPSG:3857 and EPSG:4326) and the base Map class.'
 	},
 
-
 	EPSG3395: {
 		src: ['geo/projection/Projection.Mercator.js',
 		      'geo/crs/CRS.EPSG3395.js'],
@@ -84,7 +83,6 @@ var deps = {
 		deps: ['LayerGroup', 'Popup'],
 		desc: 'Extends LayerGroup with mouse events and bindPopup method shared between layers.'
 	},
-
 
 	Path: {
 		src: ['layer/vector/Path.js',
@@ -181,7 +179,7 @@ var deps = {
 		      'dom/DomEvent.MsTouch.js',
 		      'core/Handler.js',
 		      'map/handler/Map.TouchZoom.js'],
-		deps: ['MapAnimationZoom'],
+		deps: ['AnimationZoom'],
 		desc: 'Enables smooth touch zooming on iOS and IE10 and double tap on iOS/IE10/Android.'
 	},
 
@@ -200,13 +198,6 @@ var deps = {
 		deps: ['Marker'],
 		desc: 'Makes markers draggable (by mouse or touch).'
 	},
-
-	PolyEdit: {
-		src: ['layer/vector/Polyline.Edit.js'],
-		deps: ['Polyline', 'DivIcon'],
-		desc: 'Polyline and polygon editing.'
-	},
-
 
 	ControlZoom: {
 		src: ['control/Control.js',
@@ -237,14 +228,12 @@ var deps = {
 		desc: 'Layer Switcher control.'
 	},
 
-
 	AnimationPan: {
 		src: [
 			'dom/DomEvent.js',
 			'dom/PosAnimation.js',
 			'map/anim/Map.PanAnimation.js'
 			],
-		deps: ['AnimationPan'],
 		desc: 'Core panning animation support.'
 	},
 
@@ -255,7 +244,7 @@ var deps = {
 	},
 
 	AnimationZoom: {
-		src: ['map/anim/Map.ZoomAnimation.js'],
+		src: ['map/anim/Map.ZoomAnimation.js', 'layer/tile/TileLayer.Anim.js'],
 		deps: ['AnimationPan'],
 		desc: 'Smooth zooming animation. Works only on browsers that support CSS3 Transitions.'
 	},

@@ -16,7 +16,7 @@ L.Map.Keyboard = L.Handler.extend({
 		down:    [40],
 		up:      [38],
 		zoomIn:  [187, 107, 61],
-		zoomOut: [189, 109]
+		zoomOut: [189, 109, 173]
 	},
 
 	initialize: function (map) {
@@ -31,7 +31,7 @@ L.Map.Keyboard = L.Handler.extend({
 
 		// make the container focusable by tabbing
 		if (container.tabIndex === -1) {
-			container.tabIndex = "0";
+			container.tabIndex = '0';
 		}
 
 		L.DomEvent

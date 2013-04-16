@@ -17,7 +17,7 @@ L.LayerGroup = L.Class.extend({
 	},
 
 	addLayer: function (layer) {
-		var id = L.stamp(layer);
+		var id = this.getLayerId(layer);
 
 		this._layers[id] = layer;
 
@@ -29,7 +29,7 @@ L.LayerGroup = L.Class.extend({
 	},
 
 	removeLayer: function (layer) {
-		var id = L.stamp(layer);
+		var id = this.getLayerId(layer);
 
 		delete this._layers[id];
 
@@ -38,6 +38,13 @@ L.LayerGroup = L.Class.extend({
 		}
 
 		return this;
+	},
+
+	hasLayer: function (layer) {
+		if (!layer) { return false; }
+
+		var id = this.getLayerId(layer);
+		return this._layers.hasOwnProperty(id);
 	},
 
 	clearLayers: function () {
@@ -83,10 +90,25 @@ L.LayerGroup = L.Class.extend({
 				method.call(context, this._layers[i]);
 			}
 		}
+		return this;
+	},
+
+	getLayers: function () {
+		var layers = [];
+		for (var i in this._layers) {
+			if (this._layers.hasOwnProperty(i)) {
+				layers.push(this._layers[i]);
+			}
+		}
+		return layers;
 	},
 
 	setZIndex: function (zIndex) {
 		return this.invoke('setZIndex', zIndex);
+	},
+
+	getLayerId: function (layer) {
+		return L.stamp(layer);
 	}
 });
 

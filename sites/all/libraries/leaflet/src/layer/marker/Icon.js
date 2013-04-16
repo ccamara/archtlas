@@ -6,10 +6,12 @@ L.Icon = L.Class.extend({
 	options: {
 		/*
 		iconUrl: (String) (required)
+		iconRetinaUrl: (String) (optional, used for retina devices if detected)
 		iconSize: (Point) (can be set through CSS)
 		iconAnchor: (Point) (centered by default, can be set in CSS with negative margins)
 		popupAnchor: (Point) (if not specified, popup opens in the anchor point)
 		shadowUrl: (Point) (no shadow by default)
+		shadowRetinaUrl: (String) (optional, used for retina devices if detected)
 		shadowSize: (Point)
 		shadowAnchor: (Point)
 		*/
@@ -33,7 +35,7 @@ L.Icon = L.Class.extend({
 
 		if (!src) {
 			if (name === 'icon') {
-				throw new Error("iconUrl not set in Icon options (see the docs).");
+				throw new Error('iconUrl not set in Icon options (see the docs).');
 			}
 			return null;
 		}
@@ -87,6 +89,9 @@ L.Icon = L.Class.extend({
 	},
 
 	_getIconUrl: function (name) {
+		if (L.Browser.retina && this.options[name + 'RetinaUrl']) {
+			return this.options[name + 'RetinaUrl'];
+		}
 		return this.options[name + 'Url'];
 	}
 });

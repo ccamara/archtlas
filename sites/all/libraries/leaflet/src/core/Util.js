@@ -77,14 +77,14 @@ L.Util = {
 		return obj.options;
 	},
 
-	getParamString: function (obj) {
+	getParamString: function (obj, existingUrl) {
 		var params = [];
 		for (var i in obj) {
 			if (obj.hasOwnProperty(i)) {
-				params.push(i + '=' + obj[i]);
+				params.push(encodeURIComponent(i) + '=' + encodeURIComponent(obj[i]));
 			}
 		}
-		return '?' + params.join('&');
+		return ((!existingUrl || existingUrl.indexOf('?') === -1) ? '?' : '&') + params.join('&');
 	},
 
 	template: function (str, data) {
@@ -92,9 +92,15 @@ L.Util = {
 			var value = data[key];
 			if (!data.hasOwnProperty(key)) {
 				throw new Error('No value provided for variable ' + str);
+			} else if (typeof value === 'function') {
+				value = value(data);
 			}
 			return value;
 		});
+	},
+
+	isArray: function (obj) {
+		return (Object.prototype.toString.call(obj) === '[object Array]');
 	},
 
 	emptyImageUrl: 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='
