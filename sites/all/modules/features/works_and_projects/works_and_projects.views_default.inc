@@ -114,27 +114,52 @@ Please make sure to <b>create at least one Work or project</b> to be displayed i
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Typology (field_works_taxonomy) (translated) */
-  $handler->display->display_options['filters']['field_works_taxonomy_tid_i18n']['id'] = 'field_works_taxonomy_tid_i18n';
-  $handler->display->display_options['filters']['field_works_taxonomy_tid_i18n']['table'] = 'field_data_field_works_taxonomy';
-  $handler->display->display_options['filters']['field_works_taxonomy_tid_i18n']['field'] = 'field_works_taxonomy_tid_i18n';
-  $handler->display->display_options['filters']['field_works_taxonomy_tid_i18n']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_works_taxonomy_tid_i18n']['expose']['operator_id'] = 'field_works_taxonomy_tid_i18n_op';
-  $handler->display->display_options['filters']['field_works_taxonomy_tid_i18n']['expose']['label'] = 'Typology';
-  $handler->display->display_options['filters']['field_works_taxonomy_tid_i18n']['expose']['operator'] = 'field_works_taxonomy_tid_i18n_op';
-  $handler->display->display_options['filters']['field_works_taxonomy_tid_i18n']['expose']['identifier'] = 'field_works_taxonomy_tid_i18n';
-  $handler->display->display_options['filters']['field_works_taxonomy_tid_i18n']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_works_taxonomy_tid_i18n']['expose']['remember_roles'] = array(
+  /* Filter criterion: Search: Search Terms */
+  $handler->display->display_options['filters']['keys']['id'] = 'keys';
+  $handler->display->display_options['filters']['keys']['table'] = 'search_index';
+  $handler->display->display_options['filters']['keys']['field'] = 'keys';
+  $handler->display->display_options['filters']['keys']['group'] = 1;
+  $handler->display->display_options['filters']['keys']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['keys']['expose']['operator_id'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['identifier'] = 'keys';
+  $handler->display->display_options['filters']['keys']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
   );
-  $handler->display->display_options['filters']['field_works_taxonomy_tid_i18n']['type'] = 'select';
-  $handler->display->display_options['filters']['field_works_taxonomy_tid_i18n']['vocabulary'] = 'work_s_typology';
+  /* Filter criterion: Content: Typology (field_works_taxonomy) */
+  $handler->display->display_options['filters']['field_works_taxonomy_tid']['id'] = 'field_works_taxonomy_tid';
+  $handler->display->display_options['filters']['field_works_taxonomy_tid']['table'] = 'field_data_field_works_taxonomy';
+  $handler->display->display_options['filters']['field_works_taxonomy_tid']['field'] = 'field_works_taxonomy_tid';
+  $handler->display->display_options['filters']['field_works_taxonomy_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_works_taxonomy_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_works_taxonomy_tid']['expose']['operator_id'] = 'field_works_taxonomy_tid_op';
+  $handler->display->display_options['filters']['field_works_taxonomy_tid']['expose']['label'] = 'Typology';
+  $handler->display->display_options['filters']['field_works_taxonomy_tid']['expose']['operator'] = 'field_works_taxonomy_tid_op';
+  $handler->display->display_options['filters']['field_works_taxonomy_tid']['expose']['identifier'] = 'field_works_taxonomy_tid';
+  $handler->display->display_options['filters']['field_works_taxonomy_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_works_taxonomy_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_works_taxonomy_tid']['group_info']['label'] = 'Typology (field_works_taxonomy)';
+  $handler->display->display_options['filters']['field_works_taxonomy_tid']['group_info']['identifier'] = 'field_works_taxonomy_tid';
+  $handler->display->display_options['filters']['field_works_taxonomy_tid']['group_info']['remember'] = FALSE;
+  $handler->display->display_options['filters']['field_works_taxonomy_tid']['group_info']['group_items'] = array(
+    1 => array(),
+    2 => array(),
+    3 => array(),
+  );
+  $handler->display->display_options['filters']['field_works_taxonomy_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_works_taxonomy_tid']['vocabulary'] = 'work_s_typology';
+  $handler->display->display_options['filters']['field_works_taxonomy_tid']['hierarchy'] = 1;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -185,13 +210,14 @@ Please make sure to <b>create at least one Work or project</b> to be displayed i
 
   /* Display: Attachment */
   $handler = $view->new_display('attachment', 'Attachment', 'attachment_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'leaflet';
   $handler->display->display_options['style_options']['data_source'] = 'field_geocode';
   $handler->display->display_options['style_options']['name_field'] = 'title';
-  $handler->display->display_options['style_options']['description_field'] = 'field_media_main';
+  $handler->display->display_options['style_options']['description_field'] = 'title';
   $handler->display->display_options['style_options']['map'] = 'stamen-toner';
   $handler->display->display_options['style_options']['icon'] = array(
     'iconUrl' => '',
@@ -334,6 +360,37 @@ Please make sure to <b>create at least one Work or project</b> to be displayed i
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
+  $translatables['works_and_projects'] = array(
+    t('Master'),
+    t('Works and Projects'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Empty text'),
+    t('<h2>This page has no content to display (yet)!</h2>
+Please make sure to <b>create at least one Work or project</b> to be displayed in this fancy page. In order to do so, please <a href="node/add/works">click here</a> or visit <i>"Add content/works"</i> menu.
+'),
+    t('<b>[title]</b>
+[field_media_main]
+'),
+    t('Typology'),
+    t('Typology (field_works_taxonomy)'),
+    t('Page'),
+    t('Attachment'),
+    t('Block'),
+    t('Location'),
+    t('All'),
+  );
   $export['works_and_projects'] = $view;
 
   return $export;
