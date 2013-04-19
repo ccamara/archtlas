@@ -142,6 +142,7 @@ textarea {
 
 body {
   margin: 0;
+  color: $body-color;
 }
 
 
@@ -155,13 +156,17 @@ body {
  */
 
 a:link {
+  color: $links-color;
 }
 
 a:visited {
+  color: $links-color;
 }
 
 a:hover,
 a:focus {
+  background-color: $links-color;
+  color: white;
 }
 
 a:active {
