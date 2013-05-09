@@ -4,4 +4,4 @@
  * Code for the Theming feature.
  */
 
-include_once 'feature_theming.features.inc';
+include_once 'theming_feature.features.inc';
