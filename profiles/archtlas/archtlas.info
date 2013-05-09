@@ -43,22 +43,23 @@ dependencies[] = addanother
 ; ----------
 ; Features
 ; ----------
-;Management
-;dependencies[] = user_improvements
+
+dependencies[] = contact_feature
+
 
 ; Portfolio
 dependencies[] = works_and_projects
 
-; User interface - It may be considered to substitute these dependencies by a single feature called "user interface improvements" or so
+; User interface
 
+dependencies[] = usability_improvements_feature
 dependencies[] = wysiwyg_feature
-dependencies[] = contact_feature
-dependencies[] = theming_feature
+
 
 ; ----------
 ; Themes
 ; ----------
-
+dependencies[] = theming_feature
 
 ; ----------
 ; Files
