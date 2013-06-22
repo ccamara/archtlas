@@ -15,3 +15,6 @@ sites/all/modules/development
 
 #Ignore KDE's backup files
 *~
+
+#Ignore SASS sass-cache folders
+*.sass-cache/
