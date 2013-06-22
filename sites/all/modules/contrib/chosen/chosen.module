@@ -8,28 +8,38 @@
  */
 
 /**
+ * Widget that Chosen can be applied to
+ */
+define('CHOSEN_WIDGET', 'options_select');
+
+/**
  * Implements hook_init().
  */
 function chosen_init() {
-  if ($selectors = variable_get('chosen_jquery_selector', FALSE)) {
-    drupal_add_css(libraries_get_path('chosen') . '/chosen/chosen.css');
-    drupal_add_js(chosen_js_path());
-    drupal_add_js(array(
-      'chosen' => array(
-        'selector' => variable_get('chosen_jquery_selector', 'select'),
-        'minimum' => variable_get('chosen_minimum', 20),
-      ),
-    ), 'setting');
-    drupal_add_js(drupal_get_path('module', 'chosen') . '/chosen.js');
-  }
+  libraries_load('chosen');
+  drupal_add_css(drupal_get_path('module', 'chosen') . '/css/chosen-drupal.css');
+  drupal_add_js(array(
+    'chosen' => array(
+      'selector' => variable_get('chosen_jquery_selector', 'select:visible'),
+      'minimum' => variable_get('chosen_minimum', 20),
+      'minimum_width' => variable_get('chosen_minimum_width', 200),
+      'search_contains' => (variable_get('chosen_search_contains', FALSE)) ? TRUE : FALSE,
+      'placeholder_text_multiple' => t(variable_get('chosen_placeholder_text_multiple', 'Choose some options')),
+      'placeholder_text_single' => t(variable_get('chosen_placeholder_text_single', 'Choose an option')),
+      'no_results_text' => t(variable_get('chosen_no_results_text', 'No results match')),
+    ),
+  ), 'setting');
+  drupal_add_js(drupal_get_path('module', 'chosen') . '/chosen.js',
+    array('type' => 'file', 'scope' => 'footer', 'weight' => JS_DEFAULT)
+  );
 }
 
 /**
- * Implement hook_menu()
+ * Implements hook_menu().
  */
 function chosen_menu() {
   $items = array();
-  
+
   $items['admin/config/user-interface/chosen'] = array(
     'title' => 'Chosen',
     'description' => 'Configuration for Chosen plugin',
@@ -38,26 +48,121 @@ function chosen_menu() {
     'access arguments' => array('administer site configuration'),
     'file' => 'chosen.admin.inc',
   );
-  
+
   return $items;
 }
 
 /**
- * Returns the path to the Chosen JavaScript file.
- *
- * @return mixed
- *   The path to the JavaScript file or FALSE if no file could be found.
+ * Implements hook_form_alter().
  */
-function chosen_js_path() {
-  $path = libraries_get_path('chosen');
-
-  // Use the minified file if it exists to preserve bandwidth.
-  if (file_exists($path . '/chosen/chosen.jquery.min.js')) {
-    return $path . '/chosen/chosen.jquery.min.js';
+function chosen_form_field_ui_field_edit_form_alter(&$form, $form_state) {
+  if (isset($form['instance']['widget']['type']['#value'])) {
+    $type = $form['instance']['widget']['type']['#value'];
+    if ($type == CHOSEN_WIDGET) {
+      $field = $form['#field'];
+      $instance = field_info_instance($form['instance']['entity_type']['#value'], $form['instance']['field_name']['#value'], $form['instance']['bundle']['#value']);
+      $form['instance'] += chosen_field_widget_settings_form($field, $instance);
+    }
   }
-  elseif (file_exists($path . '/chosen/chosen.jquery.js')) {
-    return $path . '/chosen/chosen.jquery.js';
-  }
+}
 
-  return FALSE;
+/**
+ * Implements hook_field_widget_info_alter().
+ *
+ * A list of settings needed by Chosen module for widgets.
+ */
+function chosen_field_widget_info_alter(&$info) {
+  $settings = array(
+    'apply_chosen' => 0,
+  );
+
+  if (isset($info[CHOSEN_WIDGET]['settings'])) {
+    $info[CHOSEN_WIDGET]['settings'] += $settings;
+  }
+}
+
+/**
+ * Implements hook_field_widget_settings_form().
+ */
+function chosen_field_widget_settings_form($field, $instance) {
+  $widget = $instance['widget'];
+  $settings = $widget['settings'];
+
+  $form['chosen'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Chosen'),
+    '#collapsed' => TRUE,
+    '#collapsible' => TRUE,
+    '#parents' => array('instance', 'widget', 'settings'),
+  );
+
+  $form['chosen']['apply_chosen'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Apply Chosen on this field'),
+    '#default_value' => $settings['apply_chosen'],
+  );
+
+  return $form;
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function chosen_field_widget_form_alter(&$element, &$form_state, $context) {
+  $type = $context['instance']['widget']['type'];
+  if ($type == CHOSEN_WIDGET) {
+    $settings = $context['instance']['widget']['settings'];
+    if (!empty($settings['apply_chosen'])) {
+      $element['#attributes']['class'][] = 'chosen-widget';
+    }
+  }
+}
+
+/**
+ * Implements hook_libraries_info().
+ */
+function chosen_libraries_info() {
+  $libraries['chosen'] = array(
+    'name' => 'Chosen',
+    'vendor url' => 'http://harvesthq.github.com/chosen/',
+    'download url' => 'https://github.com/harvesthq/chosen.git',
+    'path' => 'chosen',
+    'version arguments' => array(
+      'file' => 'VERSION',
+      'pattern' => '/(.*)/',
+      'lines' => 1,
+    ),
+    'files' => array(
+      'js' => array(
+        'chosen.jquery.min.js',
+      ),
+      'css' => array(
+        'chosen.css',
+      ),
+    ),
+    'variants' => array(
+      'minified' => array(
+        'files' => array(
+          'js' => array(
+            'chosen.jquery.min.js',
+          ),
+          'css' => array(
+            'chosen.css',
+          ),
+        ),
+      ),
+      'source' => array(
+        'files' => array(
+          'js' => array(
+            'chosen.jquery.js',
+          ),
+          'css' => array(
+            'chosen.css',
+          ),
+        ),
+      ),
+    ),
+  );
+
+  return $libraries;
 }
