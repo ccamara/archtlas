@@ -153,7 +153,7 @@ Please make sure to <b>create at least one Work or project</b> to be displayed i
     3 => array(),
   );
   $handler->display->display_options['filters']['field_works_taxonomy_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_works_taxonomy_tid']['vocabulary'] = 'work_s_typology';
+  $handler->display->display_options['filters']['field_works_taxonomy_tid']['vocabulary'] = 'typology';
   $handler->display->display_options['filters']['field_works_taxonomy_tid']['hierarchy'] = 1;
 
   /* Display: Page */

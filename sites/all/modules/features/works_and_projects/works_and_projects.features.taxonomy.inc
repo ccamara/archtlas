@@ -34,11 +34,11 @@ function works_and_projects_taxonomy_default_vocabularies() {
         ),
       ),
     ),
-    'work_s_typology' => array(
+    'typology' => array(
       'name' => 'Work\'s typology',
-      'machine_name' => 'work_s_typology',
+      'machine_name' => 'typology',
       'description' => 'Taxonomy for describing works\' typologies',
-      'hierarchy' => 1,
+      'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
       'language' => 'und',
