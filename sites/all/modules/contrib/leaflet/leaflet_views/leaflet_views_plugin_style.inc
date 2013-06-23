@@ -153,6 +153,13 @@ class leaflet_views_plugin_style extends views_plugin_style {
       '#required' => FALSE,
     );
 
+    $form['hide_empty'] = array(
+      '#title' => t('Hide empty'),
+      '#type' => 'checkbox',
+      '#description' => t('Hide the Leaflet map if there are no results to display.'),
+      '#default_value' => isset($this->options['hide_empty']) ? $this->options['hide_empty'] : TRUE
+    );
+
     $form['icon'] = array(
       '#title' => t('Map Icon'),
       '#type' => 'fieldset',
@@ -323,8 +330,20 @@ class leaflet_views_plugin_style extends views_plugin_style {
 
           // Attach pop-ups if we have a description field
           if (isset($description)) {
-            array_walk($points, create_function('&$p,$i,$t', '$p[\'popup\'] = $t;'), $description);
+            foreach ($points as &$point) {
+              $point['popup'] = $description;
+            }
           }
+
+          // Attach also titles, they might be used later on
+          if ($this->options['name_field']) {
+            foreach ($points as &$point) {
+              $point['label'] = $this->rendered_fields[$id][$this->options['name_field']];
+            }
+          }
+
+          // Let modules modify the points data.
+          drupal_alter('leaflet_views_alter_points_data', $result, $points);
 
           $data = array_merge($data, $points);
 
@@ -338,7 +357,7 @@ class leaflet_views_plugin_style extends views_plugin_style {
 
       $map = leaflet_map_get_info($this->options['map']);
 
-      if (!empty($data)) {
+      if (!empty($data) || (isset($this->options['hide_empty']) && !$this->options['hide_empty'])) {
         return leaflet_render_map($map, $data, $this->options['height'] . 'px');
       }
     }

@@ -6,7 +6,7 @@
       $(settings.leaflet).each(function () {
         // bail if the map already exists
         var container = L.DomUtil.get(this.mapId);
-        if (container._leaflet) {
+        if (!container || container._leaflet) {
           return false;
         }
 
@@ -65,6 +65,9 @@
               lFeature.bindPopup(feature.popup);
             }
           }
+
+          // Allow others to do something with the feature that was just added to the map
+          $(document).trigger('leaflet.feature', [lFeature, feature]);
         }
 
         // add layer switcher
@@ -95,9 +98,12 @@
         // add the leaflet map to our settings object to make it accessible
         this.lMap = lMap;
 
-				// Destroy features so that an AJAX reload does not get parts of the old set.
-				// Required when the View has "Use AJAX" set to Yes.
-				this.features = null;
+        // allow other modules to get access to the map object using jQuery's trigger method
+        $(document).trigger('leaflet.map', [this.map, lMap]);
+
+        // Destroy features so that an AJAX reload does not get parts of the old set.
+        // Required when the View has "Use AJAX" set to Yes.
+        this.features = null;
       });
 
       function leaflet_create_feature(feature) {
