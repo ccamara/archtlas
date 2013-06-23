@@ -35,16 +35,14 @@ dependencies[] = rdf
 ; ----------
 ; Dependencies
 ; ----------
-dependencies[] = globalredirect
-dependencies[] = transliteration
-dependencies[] = addanother
-;dependencies[] = dialog
+
 
 ; ----------
 ; Features
 ; ----------
 
 dependencies[] = contact_feature
+dependencies[] = seo_feature
 
 
 ; Portfolio
@@ -71,7 +69,7 @@ files[] = archtlas.profile
 ; ----------
 
 ; Information added by drupal.org packaging script on 2013-03-07
-version = "7.21"
+version = "7.22"
 project = "drupal"
 datestamp = "1362616996"
 
