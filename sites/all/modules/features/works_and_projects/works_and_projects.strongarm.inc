@@ -188,5 +188,26 @@ function works_and_projects_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_works'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_works_en_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_works_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_works_pattern';
+  $strongarm->value = 'works/[node:title]';
+  $export['pathauto_node_works_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_works_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_works_und_pattern'] = $strongarm;
+
   return $export;
 }
