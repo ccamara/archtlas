@@ -1,0 +1,11 @@
+name = ArchTLAS Base
+description = Global configuration for ArchTLAS installation
+core = 7.x
+package = ArchTLAS
+version = 7.x-1.0-beta1
+project = archtlas_base
+dependencies[] = contact_feature
+dependencies[] = features
+dependencies[] = menu
+features[features_api][] = api:2
+features[menu_links][] = main-menu:<front>
