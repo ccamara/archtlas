@@ -1,0 +1,35 @@
+<?php
+/**
+ * @file
+ * works_and_projects.install
+ */
+
+
+/**
+ * Implements hook_install().
+ */
+function works_and_projects_install() {
+  // Populates 'Typology' vocabulary with taxonomy terms.
+  $vocabulary = taxonomy_vocabulary_machine_name_load('typology');
+  $terms = array();
+  
+  $terms[] = t('Educational');
+  $terms[] = t('Ephemeral');
+  $terms[] = t('Health');
+  $terms[] = t('Housing');
+  $terms[] = t('Infraestructures')
+  $terms[] = t('Landscape');
+  $terms[] = t('Urbanism');
+  $terms[] = t('Recreational');
+  $terms[] = t('Rehabilitation');
+  $terms[] = t('Refurbishment'); 
+  $terms[] = t('Religious');
+
+  foreach($terms as $name) {
+    $term = new stdClass();
+    $term->vid = $vocabulary->vid;
+    $term->name = $name;
+    taxonomy_term_save($term);
+  }
+}
+
