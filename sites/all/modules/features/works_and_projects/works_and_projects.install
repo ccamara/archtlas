@@ -17,7 +17,7 @@ function works_and_projects_install() {
   $terms[] = t('Ephemeral');
   $terms[] = t('Health');
   $terms[] = t('Housing');
-  $terms[] = t('Infraestructures')
+  $terms[] = t('Infraestructures');
   $terms[] = t('Landscape');
   $terms[] = t('Urbanism');
   $terms[] = t('Recreational');
