@@ -35,14 +35,14 @@ function works_and_projects_taxonomy_default_vocabularies() {
       ),
     ),
     'typology' => array(
-      'name' => 'Work\'s typology',
+      'name' => 'Typology',
       'machine_name' => 'typology',
-      'description' => 'Taxonomy for describing works\' typologies',
+      'description' => 'Works and projects\' typologies',
       'hierarchy' => 0,
-      'module' => 'taxonomy',
+      'module' => 'works_and_projects',
       'weight' => 0,
       'language' => 'und',
-      'i18n_mode' => 1,
+      'i18n_mode' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',

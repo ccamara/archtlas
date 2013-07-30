@@ -502,45 +502,6 @@ function works_and_projects_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-works-field_works_taxonomy'
-  $field_instances['node-works-field_works_taxonomy'] = array(
-    'bundle' => 'works',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Select the term or terms that best describe the work. You can add, remove, rearrange or translate the terms by visiting <a href="admin/structure/taxonomy/work_s_typology">Administration/structure/Taxonomy</a> (should your user have the requested permissions to edit taxonomy)',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_works_taxonomy',
-    'label' => 'Typology',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
-      'type' => 'options_select',
-      'weight' => 2,
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Address');
@@ -553,9 +514,7 @@ function works_and_projects_field_default_field_instances() {
   t('Geocode');
   t('Media Main');
   t('Media_additional');
-  t('Select the term or terms that best describe the work. You can add, remove, rearrange or translate the terms by visiting <a href="admin/structure/taxonomy/work_s_typology">Administration/structure/Taxonomy</a> (should your user have the requested permissions to edit taxonomy)');
   t('The following media will be added as thumbnails to be clicked to be seen fullsize');
-  t('Typology');
 
   return $field_instances;
 }

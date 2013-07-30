@@ -128,7 +128,7 @@ Please make sure to <b>create at least one Work or project</b> to be displayed i
     1 => 0,
     3 => 0,
   );
-  /* Filter criterion: Content: Typology (field_works_taxonomy) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_works_taxonomy_tid']['id'] = 'field_works_taxonomy_tid';
   $handler->display->display_options['filters']['field_works_taxonomy_tid']['table'] = 'field_data_field_works_taxonomy';
   $handler->display->display_options['filters']['field_works_taxonomy_tid']['field'] = 'field_works_taxonomy_tid';
@@ -152,9 +152,6 @@ Please make sure to <b>create at least one Work or project</b> to be displayed i
     2 => array(),
     3 => array(),
   );
-  $handler->display->display_options['filters']['field_works_taxonomy_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_works_taxonomy_tid']['vocabulary'] = 'typology';
-  $handler->display->display_options['filters']['field_works_taxonomy_tid']['hierarchy'] = 1;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -344,15 +341,13 @@ Please make sure to <b>create at least one Work or project</b> to be displayed i
     'format' => 'decimal_degrees',
     'labels' => 1,
   );
-  /* Field: Content: Typology */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_works_taxonomy']['id'] = 'field_works_taxonomy';
   $handler->display->display_options['fields']['field_works_taxonomy']['table'] = 'field_data_field_works_taxonomy';
   $handler->display->display_options['fields']['field_works_taxonomy']['field'] = 'field_works_taxonomy';
   $handler->display->display_options['fields']['field_works_taxonomy']['label'] = '';
   $handler->display->display_options['fields']['field_works_taxonomy']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_works_taxonomy']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_works_taxonomy']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_works_taxonomy']['delta_offset'] = '0';
   $handler->display->display_options['path'] = 'typologies';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Typologies';
