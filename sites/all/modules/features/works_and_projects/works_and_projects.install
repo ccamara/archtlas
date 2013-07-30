@@ -9,7 +9,20 @@
  * Implements hook_install().
  */
 function works_and_projects_install() {
-  // Populates 'Typology' vocabulary with taxonomy terms.
+  // Generates typology vocabulary if does not exist.
+  $vocabulary = taxonomy_vocabulary_load(variable_get('typology', 0));
+  if (!$vocabulary) {
+    $edit = array (
+      'name' => t('Typology'),
+      'machine_name'=> 'typology',
+      'description' => t('Works and projects\' typologies'),
+      'module' => 'works_and_projects',
+      );
+      $vocabulary = (object) $edit;
+      taxonomy_vocabulary_save($vocabulary);
+      variable_set('works_and_projects_nav_vocabulary', $vocabulary->vid);
+  }
+  // Populates 'typology' vocabulary with taxonomy terms.
   $vocabulary = taxonomy_vocabulary_machine_name_load('typology');
   $terms = array();
   
