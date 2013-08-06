@@ -29,12 +29,17 @@ function wysiwyg_feature_filter_default_formats() {
         'weight' => 1,
         'status' => 1,
         'settings' => array(
-          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd>',
+          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd><img> <!-->',
           'filter_html_help' => 1,
           'filter_html_nofollow' => 0,
         ),
       ),
       'filter_autop' => array(
+        'weight' => 2,
+        'status' => 1,
+        'settings' => array(),
+      ),
+      'media_filter' => array(
         'weight' => 2,
         'status' => 1,
         'settings' => array(),
