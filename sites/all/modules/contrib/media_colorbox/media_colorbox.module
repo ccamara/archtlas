@@ -33,22 +33,12 @@ function media_colorbox_theme() {
  * Implements hook_menu().
  */
 function media_colorbox_menu() {
-  // Get media version
-  $path = drupal_get_path('module', 'media');
-  $info = drupal_parse_info_file($path .'/media.info');
-  $version = $info['version'];
-  if (strpos($version, '7.x-1') !== FALSE) {
-    $access_callback = 'media_access';
-  }
-  else {
-    $access_callback = 'file_entity_access';
-  }
   $items['media_colorbox/%file/%/%'] = array(
     'title' => 'Colorbox',
     'page callback' => 'media_colorbox_callback',
     'page arguments' => array(1, 2, 3),
-    'access callback' => $access_callback,
-    'access arguments' => array('view'),
+    'access callback' => 'file_entity_access',
+    'access arguments' => array('view', 1),
     'type' => MENU_CALLBACK,
     'file' => 'media_colorbox.pages.inc',
   );
@@ -152,7 +142,7 @@ function media_colorbox_field_formatter_settings_form($field, $instance, $view_m
     
     if($display['type'] == 'colorbox_link'){
       //had an issue when using this formatter in a View, results in a Fatal error: undefined function field_ui_formatter_options()
-      if (!function_exists(field_ui_formatter_options)) {
+      if (!function_exists('field_ui_formatter_options')) {
         module_load_include('inc', 'field_ui', 'field_ui.admin');
       } 
       if($field['type'] == 'text'){
