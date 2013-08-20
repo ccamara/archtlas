@@ -13,12 +13,13 @@ L.TileLayer.Canvas = L.TileLayer.extend({
 	},
 
 	redraw: function () {
-		var tiles = this._tiles;
-
-		for (var i in tiles) {
-			if (tiles.hasOwnProperty(i)) {
-				this._redrawTile(tiles[i]);
-			}
+		if (this._map) {
+			this._reset({hard: true});
+			this._update();
+		}
+		
+		for (var i in this._tiles) {
+			this._redrawTile(this._tiles[i]);
 		}
 		return this;
 	},
