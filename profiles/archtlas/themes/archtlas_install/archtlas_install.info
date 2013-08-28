@@ -1,5 +1,0 @@
-name = ArchTLAS install theme
-description = Default installation theme with custom logo.
-base theme = seven
-package = archtlas
-core = 7.x
