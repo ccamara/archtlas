@@ -1,0 +1,5 @@
+name = ArchTLAS administration theme
+description = Default administrative and installation theme with custom logo, based on Seven.
+base theme = seven
+package = archtlas
+core = 7.x
