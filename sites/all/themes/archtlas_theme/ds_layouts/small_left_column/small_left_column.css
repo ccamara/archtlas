@@ -1,0 +1,29 @@
+/**
+ * @file
+ * Display Suite Small left column stylesheet.
+ */
+
+.ds-top {
+  /* Styles for the "top" region go here */
+}
+
+.ds-body {
+  float: left;
+  width: 75%;
+}
+
+.ds-left {
+  background-color: #eee;
+  float: right;
+  padding: 15px;
+  width: 20%;
+}
+
+.ds-bottom {
+  /* Styles for the "bottom" region go here */
+}
+
+#edit-field-works-architecture-und,
+#edit-field-client-und {
+  max-width: 220px;
+}
