@@ -1,9 +1,11 @@
 This module provides integration with Leaflet map scripting library,
 http://leaflet.cloudmade.com.
 
-To use, you must download the leaflet library from
-http://leaflet.cloudmade.com/download.html or Github,
-http://github.com/CloudMade/Leaflet.
+To use, you must download the leaflet library from:
+http://leaflet.cloudmade.com/download.html
+
+Alternativelly, you can build the library from source. If so, follow the
+instructions at: http://leafletjs.com/download.html#leaflet-source-code
 
 In its current state, maps can be rendered via the included field formatter for
 Geofield or by using the API directly.
@@ -15,7 +17,9 @@ Installation
 1. Normal Drupal module installation
 
 2. Download the Leaflet library from http://leafletjs.com/. Leaflet 0.5 or higher
-   is recommended
+   is recommended. Extract it to your drupal root './sites/all/libraries/leaflet'.
+   The file 'leaflet.js' must be found at: './sites/all/libraries/leaflet/leaflet.js'.
+   All other files and folder(s) that come with the library are also needed there.
 
 3. Enable leaflet_views for using Views and Leaflet (see below), or use the display formatters
    for fields display.
