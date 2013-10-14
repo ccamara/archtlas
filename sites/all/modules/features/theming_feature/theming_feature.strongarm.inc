@@ -28,7 +28,7 @@ function theming_feature_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'theme_default';
-  $strongarm->value = 'archtlas_theme';
+  $strongarm->value = 'bootstrap_archtlas';
   $export['theme_default'] = $strongarm;
 
   return $export;
