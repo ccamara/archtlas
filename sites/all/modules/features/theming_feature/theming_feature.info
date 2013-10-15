@@ -1,7 +1,7 @@
-name = Theming
+name = ArchTLAS' Theming
 description = Sets default theme and admin theme
 core = 7.x
-package = Features
+package = ArchTLAS
 version = 7.x-1.0
 project = theming_feature
 dependencies[] = ctools
