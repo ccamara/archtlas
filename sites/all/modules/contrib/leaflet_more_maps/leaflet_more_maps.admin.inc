@@ -9,6 +9,21 @@
  * Configure leaflet more maps.
  */
 function leaflet_more_maps_admin_configure() {
+
+  $skobbler_key = variable_get('leaflet_more_maps_skobbler_key');
+  $form['keys'] = array(
+    '#type' => 'fieldset',
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    '#title' => t('Third party application keys'),
+  );
+  $form['keys']['skobbler_key'] = array(
+    '#type' => 'textfield',
+    '#title' => t('<a href="@url" target="skobbler">Skobbler</a> API key', array('@url' => 'http://www.skobbler.com')),
+    '#default_value' => $skobbler_key,
+    '#description' => t('<a href="@url" target="skobbler">Generate Skobbler API key</a>. Make sure to add your Skobbler referrers when you generate your API key. If you are on a subdomain, make sure you add the root domain as well.', array('@url' => 'http://developer.skobbler.com/web-tiles/api-key')),
+  );
+
   $map_info = array();
   // @todo call hook_leaflet_map_info() ?
   _leaflet_more_maps_assemble_default_map_info($map_info);
@@ -90,9 +105,10 @@ function leaflet_more_maps_admin_configure_form_submit($form, &$form_state) {
     $custom_map['layer-keys'] = array_filter($custom_map['layer-keys']);
   }
   variable_set('leaflet_more_maps_custom_maps', $custom_maps);
+  variable_set('leaflet_more_maps_skobbler_key', $form_state['values']['skobbler_key']);
 
-  drupal_set_message(t('The map layer configurations have been saved.'));
+  drupal_set_message(t('The map configurations have been saved.'));
 
-  // Refresh cache table or hook_leaflet_more_maps() won't be called.
+  // Refresh the cache table or hook_leaflet_more_maps() won't be called.
   cache_clear_all('*', 'cache', TRUE);
 }
