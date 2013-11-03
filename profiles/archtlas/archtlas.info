@@ -47,18 +47,7 @@ dependencies[] = seo_feature
 
 ; Portfolio
 dependencies[] = archtlas_base
-dependencies[] = works_and_projects
 
-; User interface
-
-dependencies[] = usability_improvements_feature
-dependencies[] = wysiwyg_feature
-
-
-; ----------
-; Themes
-; ----------
-dependencies[] = theming_feature
 
 ; ----------
 ; Files
