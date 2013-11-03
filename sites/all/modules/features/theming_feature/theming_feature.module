@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Theming feature.
- */
-
-include_once 'theming_feature.features.inc';

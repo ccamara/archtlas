@@ -1,34 +1,22 @@
 <?php
 /**
  * @file
- * works_and_projects.features.inc
+ * archtlas_ct.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function works_and_projects_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
-  if ($module == "field_group" && $api == "field_group") {
-    return array("version" => "1");
-  }
-  list($module, $api) = func_get_args();
+function archtlas_ct_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
 }
 
 /**
- * Implements hook_views_api().
- */
-function works_and_projects_views_api() {
-  return array("api" => "3.0");
-}
-
-/**
  * Implements hook_node_info().
  */
-function works_and_projects_node_info() {
+function archtlas_ct_node_info() {
   $items = array(
     'works' => array(
       'name' => t('Works'),

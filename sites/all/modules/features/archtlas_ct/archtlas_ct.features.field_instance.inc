@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * works_and_projects.features.field_instance.inc
+ * archtlas_ct.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function works_and_projects_field_default_field_instances() {
+function archtlas_ct_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'node-works-body'

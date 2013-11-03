@@ -1,14 +1,14 @@
 <?php
 /**
  * @file
- * works_and_projects.install
+ * archtlas_ct.install
  */
 
 
 /**
  * Implements hook_install().
  */
-function works_and_projects_install() {
+function archtlas_ct_install() {
   // Generates 'Typology' vocabulary if does not exist.
   $vocabulary = taxonomy_vocabulary_load(variable_get('typology', 0));
   if (!$vocabulary) {
@@ -16,7 +16,7 @@ function works_and_projects_install() {
       'name' => t('Typology'),
       'machine_name'=> 'typology',
       'description' => t('Works and projects\' typologies'),
-      'module' => 'works_and_projects',
+      'module' => 'archtlas_ct',
       );
       $vocabulary = (object) $edit;
       taxonomy_vocabulary_save($vocabulary);

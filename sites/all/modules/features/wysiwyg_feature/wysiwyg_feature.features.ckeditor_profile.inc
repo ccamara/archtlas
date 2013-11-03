@@ -79,7 +79,9 @@ function wysiwyg_feature_ckeditor_profile_defaults() {
           ),
         ),
       ),
-      'input_formats' => array(),
+      'input_formats' => array(
+        'filtered_html' => 'Filtered HTML',
+      ),
     ),
     'CKEditor Global Profile' => array(
       'name' => 'CKEditor Global Profile',

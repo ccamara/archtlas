@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * works_and_projects.strongarm.inc
+ * archtlas_ct.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function works_and_projects_strongarm() {
+function archtlas_ct_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
@@ -115,35 +115,6 @@ function works_and_projects_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'i18n_node_extended_works';
-  $strongarm->value = '1';
-  $export['i18n_node_extended_works'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'i18n_node_options_works';
-  $strongarm->value = array();
-  $export['i18n_node_options_works'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'i18n_sync_node_type_works';
-  $strongarm->value = array(
-    0 => 'field_works_address',
-    1 => 'field_works_area',
-    2 => 'field_works_date',
-    3 => 'field_works_budget',
-    4 => 'field_client',
-    5 => 'field_works_architecture',
-    6 => 'field_geocode',
-  );
-  $export['i18n_sync_node_type_works'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_works';
   $strongarm->value = '2';
   $export['language_content_type_works'] = $strongarm;
@@ -187,27 +158,6 @@ function works_and_projects_strongarm() {
   $strongarm->name = 'node_submitted_works';
   $strongarm->value = 0;
   $export['node_submitted_works'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_works_en_pattern';
-  $strongarm->value = '';
-  $export['pathauto_node_works_en_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_works_pattern';
-  $strongarm->value = 'works/[node:title]';
-  $export['pathauto_node_works_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_works_und_pattern';
-  $strongarm->value = '';
-  $export['pathauto_node_works_und_pattern'] = $strongarm;
 
   return $export;
 }

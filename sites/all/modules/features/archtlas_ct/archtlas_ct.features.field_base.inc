@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * works_and_projects.features.field_base.inc
+ * archtlas_ct.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function works_and_projects_field_default_field_bases() {
+function archtlas_ct_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'body'

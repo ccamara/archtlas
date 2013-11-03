@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * works_and_projects.features.taxonomy.inc
+ * archtlas_ct.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function works_and_projects_taxonomy_default_vocabularies() {
+function archtlas_ct_taxonomy_default_vocabularies() {
   return array(
     'client' => array(
       'name' => 'Client',
@@ -15,31 +15,6 @@ function works_and_projects_taxonomy_default_vocabularies() {
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
-      'language' => 'und',
-      'i18n_mode' => 0,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
-    ),
-    'typology' => array(
-      'name' => 'Typology',
-      'machine_name' => 'typology',
-      'description' => 'Works and projects\' typologies',
-      'hierarchy' => 0,
-      'module' => 'works_and_projects',
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 0,

@@ -10,7 +10,7 @@
 function blog_feature_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: access comments.
+  // Exported permission: 'access comments'.
   $permissions['access comments'] = array(
     'name' => 'access comments',
     'roles' => array(
@@ -21,7 +21,7 @@ function blog_feature_user_default_permissions() {
     'module' => 'comment',
   );
 
-  // Exported permission: post comments.
+  // Exported permission: 'post comments'.
   $permissions['post comments'] = array(
     'name' => 'post comments',
     'roles' => array(

@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the ArchTLAS Base feature.
  */
+
+include_once 'archtlas_base.features.inc';
