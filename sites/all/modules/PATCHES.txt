@@ -1,7 +1,0 @@
-Leaflet: Leaflet library not found
-url: https://drupal.org/node/1954942#14
-patch: leaflet-fix_leaflet_library_location-1954942-14.patch
-
-Media Colorbox: Compatibility with media 1.x
-url: http://drupal.org/node/1539528#comment-5890876
-patch: compatibility_media_1-1539528-1.patch   

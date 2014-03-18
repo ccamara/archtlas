@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Usability improvements feature.
- */
-
-include_once 'usability_improvements_feature.features.inc';
