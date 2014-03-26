@@ -1,0 +1,1 @@
+drush make --working-copy --no-core --contrib-destination=. archtlas.make .
