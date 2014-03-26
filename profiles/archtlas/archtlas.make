@@ -29,6 +29,9 @@ projects[features][version] = 2.0
 projects[features][subdir] =  contrib
 projects[features][patch][766264] = http://drupal.org/files/766264-25-alter-override.patch
 
+projects[getlocations][version] = 1.12
+projects[getlocations][subdir] = contrib
+
 projects[libraries][version] = 2.1
 projects[libraries][subdir] =  contrib
 
