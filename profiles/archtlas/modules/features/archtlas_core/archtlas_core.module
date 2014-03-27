@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ArchTLAS Core feature.
+ */
+
+include_once 'archtlas_core.features.inc';
