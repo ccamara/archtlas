@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Archtlas Projects feature.
+ */
+
+include_once 'archtlas_projects.features.inc';
