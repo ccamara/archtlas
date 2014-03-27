@@ -13,10 +13,10 @@ projects[drupal][version] = 7.26
 projects[ckeditor][version] = 1.13
 projects[ckeditor][subdir] = contrib
 
-projects[ctools][version] = 1.3
+projects[ctools][version] = 1.4
 projects[ctools][subdir] =  contrib
 
-projects[date][version] = 2.6
+projects[date][version] = 2.7
 projects[date][subdir] =  contrib
 
 projects[ds][version] = 2.6
@@ -32,13 +32,13 @@ projects[features][patch][766264] = http://drupal.org/files/766264-25-alter-over
 projects[getlocations][version] = 1.12
 projects[getlocations][subdir] = contrib
 
-projects[libraries][version] = 2.1
-projects[libraries][subdir] =  contrib
-
 projects[l10n_update][download][type] = git
 projects[l10n_update][download][url] = git://drupalcode.org/project/l10n_update.git
 projects[l10n_update][download][revision] = 20a80d1487dce4afad8b8b5a00b5aea5f2b9f2bc
 projects[l10n_update][subdir] =  contrib
+
+projects[libraries][version] = 2.2
+projects[libraries][subdir] =  contrib
 
 projects[linkit][version] = 3.1
 projects[linkit][subdir] =  contrib
