@@ -73,7 +73,7 @@ projects[zen][subdir] =  contrib
 
 libraries[ckeditor][download][type] = get
 libraries[ckeditor][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.3.1/ckeditor_4.3.1_full.zip
-libraries[ckeditor][destination] = libraries
+libraries[ckeditor][destination] = contrib/ckeditor
 
 ; Translations for ArchTLAS install profile
 ; uncomment and modify following lines copied from openatrium drush.make file
