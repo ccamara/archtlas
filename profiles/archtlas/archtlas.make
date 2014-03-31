@@ -6,7 +6,7 @@ api = "2"
 projects[drupal][type] = core
 projects[drupal][version] = 7.26
 
-; MODULES
+;MODULES
 ;projects[context][version] = 3.1
 ;projects[context][subdir] = contrib
 
@@ -14,20 +14,23 @@ projects[ckeditor][version] = 1.13
 projects[ckeditor][subdir] = contrib
 
 projects[ctools][version] = 1.4
-projects[ctools][subdir] =  contrib
+projects[ctools][subdir] = contrib
 
 projects[date][version] = 2.7
-projects[date][subdir] =  contrib
+projects[date][subdir] = contrib
 
 projects[ds][version] = 2.6
-projects[ds][subdir] =  contrib
+projects[ds][subdir] = contrib
 
 projects[entity][version] = 1.2
-projects[entity][subdir] =   contrib
+projects[entity][subdir] = contrib
 
 projects[features][version] = 2.0
-projects[features][subdir] =  contrib
+projects[features][subdir] = contrib
 projects[features][patch][766264] = http://drupal.org/files/766264-25-alter-override.patch
+
+projects[flexslider][version] = 2.0-alpha3
+projects[flexslider][subdir] = contrib
 
 projects[getlocations][version] = 1.12
 projects[getlocations][subdir] = contrib
@@ -38,10 +41,10 @@ projects[l10n_update][download][revision] = 20a80d1487dce4afad8b8b5a00b5aea5f2b9
 projects[l10n_update][subdir] =  contrib
 
 projects[libraries][version] = 2.2
-projects[libraries][subdir] =  contrib
+projects[libraries][subdir] = contrib
 
 projects[linkit][version] = 3.1
-projects[linkit][subdir] =  contrib
+projects[linkit][subdir] = contrib
 
 projects[media][download][type] = "git"
 projects[media][download][url] = "git://drupalcode.org/project/media.git"
