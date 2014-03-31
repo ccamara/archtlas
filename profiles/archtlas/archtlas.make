@@ -32,6 +32,9 @@ projects[features][patch][766264] = http://drupal.org/files/766264-25-alter-over
 projects[flexslider][version] = 2.0-alpha3
 projects[flexslider][subdir] = contrib
 
+projects[file_entity][version] = 2.0-alpha3
+projects[file_entity][subdir] = contrib
+
 projects[getlocations][version] = 1.12
 projects[getlocations][subdir] = contrib
 
@@ -77,6 +80,13 @@ projects[zen][subdir] =  contrib
 libraries[ckeditor][download][type] = get
 libraries[ckeditor][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.3.1/ckeditor_4.3.1_full.zip
 libraries[ckeditor][destination] = modules/contrib/ckeditor
+
+; FlexSlider
+libraries[flexslider][download][type] = "get"
+libraries[flexslider][download][url] = "https://github.com/woothemes/FlexSlider/zipball/master"
+libraries[flexslider][directory_name] = "flexslider"
+libraries[flexslider][type] = "library"
+
 
 ; Translations for ArchTLAS install profile
 ; uncomment and modify following lines copied from openatrium drush.make file
